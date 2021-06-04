@@ -11,12 +11,16 @@ private:
 public:
     Veiculo(const char *nome);
     virtual ~Veiculo();
-    virtual void mover();
+    virtual void mover() = 0;
 };
 
-
-class Terrestre : public Veiculo
+class Terrestre : public virtual Veiculo
 {
+protected:
+    Terrestre() : Veiculo("Veículo terrestre")
+    {
+
+    }
 private:
     int cap_pass = 5;
 public:
@@ -28,8 +32,12 @@ public:
     void mover();
 };
 
-class Aquatico : public Veiculo
+class Aquatico : public virtual Veiculo
 {
+protected:
+    Aquatico() : Veiculo("Veículo aquático")
+    {   
+    }
 private:
     float carga_max = 10;
 public:
@@ -51,5 +59,16 @@ public:
 
     float getVelMax();
     void setVelMax(float vel_max);
+    void mover();
+};
+
+class Anfibio : public Terrestre, public Aquatico
+{
+private:
+    /* data */
+public:
+    Anfibio (const char * nome) : Veiculo(nome), Terrestre(), Aquatico() {}
+    virtual ~Anfibio();
+
     void mover();
 };

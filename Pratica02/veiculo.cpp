@@ -10,6 +10,7 @@ Veiculo::Veiculo(const char *nome)
 }
 Veiculo::~Veiculo()
 {
+    cout << "Destrutor veículo" << endl;
 }
 void Veiculo::mover()
 {
@@ -23,6 +24,7 @@ Terrestre::Terrestre(const char *nome) : Veiculo(nome)
 }
 Terrestre::~Terrestre()
 {
+    cout << "Destrutor Terrestre" << endl;
 }
 int Terrestre::getCapacidadePass()
 {
@@ -44,6 +46,8 @@ Aquatico::Aquatico(const char *nome) : Veiculo(nome)
 }
 Aquatico::~Aquatico()
 {
+    cout << "Destrutor aquatico" << endl;
+
 }
 float Aquatico::getCargaMax()
 {
@@ -65,6 +69,7 @@ Aereo::Aereo(const char *nome) : Veiculo(nome)
 }
 Aereo::~Aereo()
 {
+    cout << "Destrutor aéreo" << endl;
 }
 float Aereo::getVelMax()
 {
@@ -77,4 +82,14 @@ void Aereo::setVelMax(float vel_max)
 void Aereo::mover()
 {
     cout <<"Veiculo aéreo nome: " << this->nome << "moveu" << endl;
+}
+
+
+Anfibio::~Anfibio()
+{
+}
+void Anfibio:: mover()
+{
+    Terrestre::mover();
+    Aquatico::mover();
 }
