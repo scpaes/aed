@@ -17,11 +17,13 @@ class Veiculo{
 };
 
 int main(){
-    Veiculo veiculo1("Fusca");
-    {
-        Veiculo veiculo2("Brasilia");
-        {
-            Veiculo veiculo3("Gol");
-        }
-    }
+    // creating objects
+    Veiculo *v1 = new Veiculo("Fusca");
+    Veiculo *v2 = new Veiculo("Brasilia");
+    Veiculo *v3 = new Veiculo("Opala");
+    
+    // deleting objects
+    delete v1;
+    delete v2;
+    delete v3;
 }
