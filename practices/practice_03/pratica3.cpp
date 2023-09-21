@@ -1,5 +1,6 @@
 #include <iostream>
 #include "funcoes.h"
+#include "arranjo.h"
 
 
 using namespace std;
@@ -18,5 +19,24 @@ int main() {
     const char *a = "StringA", *b = "StringB";
     cout << "Minimo entre strings " << a << " e " << b << ": " << minimo(a, b) << endl;
     cout << "Maximo entre strings " << a << " e " << b << ": " << maximo(a, b) << endl;
+
+    Arranjo<int> arr(10);
+    arr.set(4, 5);
+    arr.set(7, 15);
+    arr.set(8, 22);
+    arr.exibir();
+
+    Arranjo<float> arr2(10);
+    arr2.set(4, 5.5);
+    arr2.set(7, 15.15);
+    arr2.set(8, 22.22);
+    arr2.exibir();
+
+    try {
+        arr.get(10);
+    } catch (IndiceInvalido &e) {
+        cout << e.what() << endl;
+    }
+
     return 0;
 }
