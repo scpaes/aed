@@ -3,3 +3,5 @@
 //
 
 #include "IndiceInvalido.h"
+
+IndiceInvalido::IndiceInvalido() : std::runtime_error("Indice invalido") {}

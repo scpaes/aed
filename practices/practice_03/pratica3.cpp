@@ -1,6 +1,7 @@
 #include <iostream>
 #include "funcoes.h"
 #include "arranjo.h"
+#include "aluno.h"
 
 
 using namespace std;
@@ -37,6 +38,12 @@ int main() {
     } catch (IndiceInvalido &e) {
         cout << e.what() << endl;
     }
+
+    Arranjo<Aluno> turma(3);
+    turma.set(0, Aluno("Joao", "1234"));
+    turma.set(1, Aluno("Maria", "5235"));
+    turma.set(2, Aluno("Jose", "2412"));
+    turma.exibir();
 
     return 0;
 }

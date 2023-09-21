@@ -34,11 +34,11 @@ public:
         items[idx] = item;
     }
 
-    virtual void exibir();
+    [[noreturn]] virtual void exibir();
 };
 
 template<class T>
-void Arranjo<T>::exibir() {
+[[noreturn]] void Arranjo<T>::exibir() {
     for (int i = 0; i < tamanho; i++) {
         std::cout << i << ": " << items[i] << std::endl;
     }

@@ -9,7 +9,7 @@
 
 class IndiceInvalido : public std::runtime_error {
 public:
-    IndiceInvalido() : std::runtime_error("Indice invalido") {}
+    IndiceInvalido();
 };
 
 

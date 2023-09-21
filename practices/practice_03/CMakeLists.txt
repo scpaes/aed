@@ -7,4 +7,6 @@ add_executable(practice_03 pratica3.cpp
         funcoes.h
         arranjo.h
         IndiceInvalido.cpp
-        IndiceInvalido.h)
+        IndiceInvalido.h
+        aluno.cpp
+        aluno.h)
