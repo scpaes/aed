@@ -16,28 +16,52 @@ Veiculo::~Veiculo() {
 }
 
 // Terrestre methods implementation
-//Terrestre::Terrestre(const char *nome) : Veiculo(nome) {
-//    cout << "Veiculo terrestre com o nome " << nome << " criado" << endl;
-//}
-//
-//Terrestre::~Terrestre() {
-//    cout << "Veiculo terrestre com o nome " << nome << " destruido" << endl;
-//}
-//
+Terrestre::Terrestre(const char *nome) : Veiculo(nome), cap_pass(5) {
+    cout << "Veiculo terrestre com o nome " << nome << " criado" << endl;
+}
+
+Terrestre::~Terrestre() {
+    cout << "Veiculo terrestre com o nome " << nome << " destruido" << endl;
+}
+
+int Terrestre::get_cap_pass() {
+    return cap_pass;
+}
+
+void Terrestre::set_cap_pass(int cap_pass) {
+    this->cap_pass = cap_pass;
+}
+
 // Aquatico methods implementation
-//Aquatico::Aquatico(const char *nome) : Veiculo(nome) {
-//    cout << "Veiculo aquatico com o nome " << nome << " criado" << endl;
-//}
-//
-//Aquatico::~Aquatico() {
-//    cout << "Veiculo aquatico com o nome " << nome << " destruido" << endl;
-//}
-//
+Aquatico::Aquatico(const char *nome) : Veiculo(nome), carga_max(10) {
+    cout << "Veiculo aquatico com o nome " << nome << " criado" << endl;
+}
+
+Aquatico::~Aquatico() {
+    cout << "Veiculo aquatico com o nome " << nome << " destruido" << endl;
+}
+
+float Aquatico::get_carga_max() {
+    return carga_max;
+}
+
+void Aquatico::set_carga_max(float carga_max) {
+    this->carga_max = carga_max;
+}
+
 // Aerio methods implementation
-//Aerio::Aerio(const char *nome) : Veiculo(nome) {
-//    cout << "Veiculo aerio com o nome " << nome << " criado" << endl;
-//}
-//
-//Aerio::~Aerio() {
-//    cout << "Veiculo aerio com o nome " << nome << " destruido" << endl;
-//}
+Aerio::Aerio(const char *nome) : Veiculo(nome), vel_max(100) {
+    cout << "Veiculo aerio com o nome " << nome << " criado" << endl;
+}
+
+Aerio::~Aerio() {
+    cout << "Veiculo aerio com o nome " << nome << " destruido" << endl;
+}
+
+float Aerio::get_vel_max() {
+    return vel_max;
+}
+
+void Aerio::set_vel_max(float vel_max) {
+    this->vel_max = vel_max;
+}
