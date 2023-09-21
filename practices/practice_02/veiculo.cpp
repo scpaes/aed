@@ -32,6 +32,10 @@ void Terrestre::set_cap_pass(int cap_pass) {
     this->cap_pass = cap_pass;
 }
 
+void Terrestre::mover() {
+    cout << "Veiculo terrestre com o nome " << nome << " se movendo" << endl;
+}
+
 // Aquatico methods implementation
 Aquatico::Aquatico(const char *nome) : Veiculo(nome), carga_max(10) {
     cout << "Veiculo aquatico com o nome " << nome << " criado" << endl;
@@ -49,6 +53,10 @@ void Aquatico::set_carga_max(float carga_max) {
     this->carga_max = carga_max;
 }
 
+void Aquatico::mover() {
+    cout << "Veiculo aquatico com o nome " << nome << " se movendo" << endl;
+}
+
 // Aerio methods implementation
 Aerio::Aerio(const char *nome) : Veiculo(nome), vel_max(100) {
     cout << "Veiculo aerio com o nome " << nome << " criado" << endl;
@@ -64,4 +72,8 @@ float Aerio::get_vel_max() {
 
 void Aerio::set_vel_max(float vel_max) {
     this->vel_max = vel_max;
+}
+
+void Aerio::mover() {
+    cout << "Veiculo aerio com o nome " << nome << " se movendo" << endl;
 }

@@ -15,7 +15,9 @@ protected:
 public:
     Veiculo(const char *nome);
 
-    ~Veiculo();
+    virtual ~Veiculo();
+
+    virtual void mover() = 0;
 };
 
 class Terrestre : public Veiculo {
@@ -24,11 +26,13 @@ private:
 public:
     Terrestre(const char *nome);
 
-    ~Terrestre();
+    virtual ~Terrestre();
 
     int get_cap_pass();
 
     void set_cap_pass(int cap_pass);
+
+    void mover();
 };
 
 class Aquatico : public Veiculo {
@@ -37,11 +41,13 @@ private:
 public:
     Aquatico(const char *nome);
 
-    ~Aquatico();
+    virtual ~Aquatico();
 
     float get_carga_max();
 
     void set_carga_max(float carga_max);
+
+    void mover();
 };
 
 class Aerio : public Veiculo {
@@ -50,11 +56,13 @@ private:
 public:
     Aerio(const char *nome);
 
-    ~Aerio();
+    virtual ~Aerio();
 
     float get_vel_max();
 
     void set_vel_max(float vel_max);
+
+    void mover();
 };
 
 
