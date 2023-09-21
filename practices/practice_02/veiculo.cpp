@@ -20,6 +20,8 @@ Terrestre::Terrestre(const char *nome) : Veiculo(nome), cap_pass(5) {
     cout << "Veiculo terrestre com o nome " << nome << " criado" << endl;
 }
 
+Terrestre::Terrestre() : Veiculo("Terrestre default value"), cap_pass(5) {}
+
 Terrestre::~Terrestre() {
     cout << "Veiculo terrestre com o nome " << nome << " destruido" << endl;
 }
@@ -40,6 +42,8 @@ void Terrestre::mover() {
 Aquatico::Aquatico(const char *nome) : Veiculo(nome), carga_max(10) {
     cout << "Veiculo aquatico com o nome " << nome << " criado" << endl;
 }
+
+Aquatico::Aquatico() : Veiculo("Aquatico default value"), carga_max(10) {}
 
 Aquatico::~Aquatico() {
     cout << "Veiculo aquatico com o nome " << nome << " destruido" << endl;
@@ -76,4 +80,19 @@ void Aerio::set_vel_max(float vel_max) {
 
 void Aerio::mover() {
     cout << "Veiculo aerio com o nome " << nome << " se movendo" << endl;
+}
+
+// Anfibio methods implementation
+Anfibio::Anfibio(const char *nome) : Veiculo(nome), Terrestre(), Aquatico() {
+    cout << "Veiculo anfibio com o nome " << nome << " criado" << endl;
+}
+
+Anfibio::~Anfibio() {
+    cout << "Veiculo anfibio com o nome " << nome << " destruido" << endl;
+}
+
+void Anfibio::mover() {
+    Terrestre::mover();
+    Aquatico::mover();
+    cout << "Veiculo anfibio com o nome " << nome << " se movendo" << endl;
 }

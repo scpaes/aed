@@ -20,13 +20,16 @@ public:
     virtual void mover() = 0;
 };
 
-class Terrestre : public Veiculo {
+class Terrestre : public virtual Veiculo {
 private:
     int cap_pass; // capacidade de passageiros
-public:
-    Terrestre(const char *nome);
+protected:
+    Terrestre();
 
-    virtual ~Terrestre();
+    ~Terrestre();
+
+public:
+    explicit Terrestre(const char *nome);
 
     int get_cap_pass();
 
@@ -35,13 +38,16 @@ public:
     void mover();
 };
 
-class Aquatico : public Veiculo {
+class Aquatico : public virtual Veiculo {
 private:
     float carga_max; // capacidade de carga
-public:
-    Aquatico(const char *nome);
+protected:
+    Aquatico();
 
-    virtual ~Aquatico();
+    ~Aquatico();
+
+public:
+    explicit Aquatico(const char *nome);
 
     float get_carga_max();
 
@@ -54,7 +60,7 @@ class Aerio : public Veiculo {
 private:
     float vel_max; // velocidade maxima
 public:
-    Aerio(const char *nome);
+    explicit Aerio(const char *nome);
 
     virtual ~Aerio();
 
@@ -65,5 +71,13 @@ public:
     void mover();
 };
 
+class Anfibio : public Terrestre, public Aquatico {
+public:
+    explicit Anfibio(const char *nome);
+
+    ~Anfibio();
+
+    void mover();
+};
 
 #endif //PRACTICE_02_VEICULO_H
