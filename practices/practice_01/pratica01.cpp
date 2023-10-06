@@ -4,7 +4,7 @@
 using namespace std;
 
 
-int main(){
+int main() {
     // creating objects at heap
     Veiculo *v1 = new Veiculo("Fusca");
     Veiculo *v2 = new Veiculo("Brasilia");
@@ -17,11 +17,11 @@ int main(){
 
     //seting number of wheels
     v1->setNumRodas(4);
-    v2->setNumRodas(4);
+    v1->setNumRodas(4);
 
     //getting number of wheels
     cout << "Numero de rodas do " << v1->getNumRodas() << endl;
-    cout << "Numero de rodas do " << v2->getNumRodas() << endl;
+    // cout << "Numero de rodas do " << v2->getNumRodas() << endl;
 
     delete v1;
     delete v2;

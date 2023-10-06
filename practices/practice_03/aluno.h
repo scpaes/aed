@@ -20,13 +20,13 @@ public:
     Aluno(const char *nome, const char *mat);
 
     friend class Arranjo<Aluno>;
-
-    template<>
-    void Arranjo<Aluno>::set(int idx, const Aluno &aluno);
-
-    template<>
-    [[noreturn]] void Arranjo<Aluno>::exibir();
 };
+
+template<>
+void Arranjo<Aluno>::set(int idx, const Aluno &aluno);
+
+template<>
+[[noreturn]] void Arranjo<Aluno>::exibir();
 
 
 #endif //PRACTICE_03_ALUNO_H
