@@ -9,4 +9,5 @@ add_executable(practice_03 pratica3.cpp
         IndiceInvalido.cpp
         IndiceInvalido.h
         aluno.cpp
-        aluno.h)
+        aluno.h
+)

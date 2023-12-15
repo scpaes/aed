@@ -31,7 +31,6 @@ public:
             throw "Lista cheia";
         }
         this->items[this->tamanho++] = item;
-
     }
 
     T pega(int idx) {
@@ -49,24 +48,26 @@ public:
         } else if (idx > this->tamanho) {
             throw "Item inválido";
         }
-        for (int i = this->tamanho; i > idx; i--) {
-            this->items[i + 1] = this->items[i];
-        }
+
         this->tamanho++;
+        for (int i = this->tamanho; i > idx - 1; i--) {
+            this->items[i] = this->items[i - 1];
+        }
+        this->items[idx - 1] = item;
     }
 
     void remove(int idx) {
-        if (idx < 1 || idx > this->capacidade) {
+        if (idx < 1 || idx > this->tamanho) {
             throw "Item inválido";
         }
-        for (int i = idx; i < this->tamanho; i++) {
-            this->items[i - 1] = this->items[i];
+        for (int i = idx - 1; i < this->tamanho; i++) {
+            this->items[i] = this->items[i + 1];
         }
         this->tamanho--;
     }
 
     void exibe() {
-        for (int i = 0; i <= this->tamanho; ++i) {
+        for (int i = 0; i < this->tamanho; ++i) {
             cerr << this->items[i] << " ";
         }
     }

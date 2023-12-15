@@ -9,10 +9,10 @@ using namespace std;
 
 int main() {
     // mainPilha();
-    //mainPolonesa();
+    // mainPolonesa();
     // mainF();
-    mainL();
-    //mainChar();
+    // mainL();
+    mainChar();
     // mainImp();
     return 0;
 }
